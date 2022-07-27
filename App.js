@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
+
 import Button from './src/components/Button'
+import Display from './src/components/Display'
 
 export default class App extends Component {
+  state = {
+    displayValue: '0'
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
+        <Display value={this.state.displayValue} />
         <SafeAreaView style={styles.buttons}>
           <Button label="AC" />
           <Button label="/" />
